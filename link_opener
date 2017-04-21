@@ -1,0 +1,16 @@
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+"""
+link_opener 0.1 -- a simple command-line script to open links from a text file.
+"""
+
+import webbrowser
+import argparse
+
+parser = argparse.ArgumentParser()
+parser.add_argument('file_o_links')
+args = parser.parse_args()
+
+with open (args.file_o_links, 'r') as fh:
+    for link in fh:
+        webbrowser.open_new_tab(link)
